@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block title %}
+    Auto Remote
+{% endblock %}
+{% block content %}
+        <p>Click Button to retreive most interesting available games</p>
+            <a href="{{ url_for('auto_remote_live_sit_viewer') }}">  
+                <input type="submit" value="Find Most Interesting Games"/>  
+               </a>
+        </form>
+{% endblock %}
