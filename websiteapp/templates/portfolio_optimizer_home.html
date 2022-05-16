@@ -7,6 +7,12 @@
         <form method="post" action=".">
             <p><input name="ticker_list" /></p>
             <p><input type="submit" value="Find Max Sharpe Portfolio" /></p>
-            <p>{{data|safe}}</p>
         </form>
+        <div id="chart1"></div>
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <script>
+            var graph1 = {{ data | safe }};
+            Plotly.plot('chart1', graph1, {})
+        </script>
+
 {% endblock %}

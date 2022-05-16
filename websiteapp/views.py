@@ -62,13 +62,14 @@ def auto_remote_ii_calculations_viewer():
 @app.route("/portfolio_optimizer/", methods=["GET", "POST"])
 def portfolio_optimizer_home():
     if request.method == 'POST':
-           tickers = request.form['ticker_list']
-           ticker_list = tickers.split()
-
-           data = portfoliooptimizerfunctions.OptimizationMethods(ticker_list).max_sharpe_return_df()
+        tickers = request.form['ticker_list'].upper()
+        ticker_list = tickers.split(', ')
+        # data = portfoliooptimizerfunctions.OptimizationMethods(ticker_list).max_sharpe_return_df().to_html()
+        data = portfoliooptimizerfunctions.OptimizationMethods(ticker_list).max_sharpe_return_pie()
+        return render_template('portfolio_optimizer_home.html', data=data)
 
     return render_template(
-        'portfolio_optimizer_home.html', data=data
+        'portfolio_optimizer_home.html'
     )
 
 @app.route('/portfolio_optimizer/max_sharpe_portfolio/', methods=["GET", "POST"])
