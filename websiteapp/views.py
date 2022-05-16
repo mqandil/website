@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 from . import app
 from . import auto_remote
 from IPython.display import display
+from . import portfoliooptimizerfunctions
 
 @app.route("/")
 def home():
@@ -25,6 +26,7 @@ def hello_there(name = None):
         date=datetime.now()
     )
 
+###################AUTO REMOTE###########################
 @app.route("/auto-remote/")
 def auto_remote_viewer():
     return render_template(
@@ -36,19 +38,48 @@ def auto_remote_live_sit_viewer():
     live_situation_info = auto_remote.GetPyRemote().get_live_situation()
 
     return render_template(
-        'auto_remote_live.html', live_situation = live_situation_info.to_html(index=False)
+        'auto_remote_live.html', data = live_situation_info.to_html(index=False)
     )
 
-@app.route("/portfolio_optimizer/")
-def portfolio_optimizer_home():
+@app.route("/auto-remote/interest-index/", methods=['GET', 'POST'])
+def auto_remote_interest_index_viewer():
+    interest_index_info = auto_remote.GetPyRemote().get_interest_index()
+
     return render_template(
-        'portfolio_optimizer_home.html'
+        'auto_remote_live.html', data = interest_index_info.to_html(index=False)
+    )
+
+@app.route("/auto-remote/ii-calculations/", methods=['GET', 'POST'])
+def auto_remote_ii_calculations_viewer():
+    ii_calculations_info = auto_remote.GetPyRemote().get_ii_calculations()
+
+    return render_template(
+        'auto_remote_live.html', data = ii_calculations_info.to_html(index=False)
+    )
+
+###################PORTFOLIO OPTIMIZER###########################
+
+@app.route("/portfolio_optimizer/", methods=["GET", "POST"])
+def portfolio_optimizer_home():
+    if request.method == 'POST':
+           tickers = request.form['ticker_list']
+           ticker_list = tickers.split()
+
+           data = portfoliooptimizerfunctions.OptimizationMethods(ticker_list).max_sharpe_return_df()
+
+    return render_template(
+        'portfolio_optimizer_home.html', data=data
     )
 
 @app.route('/portfolio_optimizer/max_sharpe_portfolio/', methods=["GET", "POST"])
 def portfolio_opt_home():
+    ticker_list = []
+    if request.method == 'POST':
+           ticker_list = request.form['ticker_list']
+
     return render_template(
-        'portfolio_optimizer_max_sharpe.html'
+        'portfolio_optimizer_max_sharpe.html',
+        data = ticker_list
     )
 
 @app.route("/api/data")

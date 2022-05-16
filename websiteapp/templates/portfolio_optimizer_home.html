@@ -6,6 +6,7 @@
         <p>Enter a list of comma-separated stock tickers (e.g. MSFT, PG, HLI):</p>
         <form method="post" action=".">
             <p><input name="ticker_list" /></p>
-            <p><input type="submit" value="Find Optimal Portfolio" /></p>
+            <p><input type="submit" value="Find Max Sharpe Portfolio" /></p>
+            <p>{{data|safe}}</p>
         </form>
 {% endblock %}

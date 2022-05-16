@@ -7,11 +7,16 @@ class GetPyRemote:
 
     def get_interest_index(self):
         interest_index_df = self.mlblivedata.get_interest_index_df()
+
         return interest_index_df
 
     def get_live_situation(self):
         live_situation = self.mlblivedata.get_live_situation_df()
         return live_situation
+
+    def get_ii_calculations(self):
+        ii_calculations = self.mlblivedata.get_ii_calculations()
+        return ii_calculations
 
     
 if __name__ == '__main__':
