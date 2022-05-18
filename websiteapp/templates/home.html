@@ -3,26 +3,62 @@
     Home
 {% endblock %}
 {% block content %}
-    <section class="content-section">
-        <p>Home page for my website</p>
-        
-        <div class="content-block-one">
-            <p>Home page for my website</p>
+    <section class='content-section-header'>
+        <div>
+            <p>This website is a work in progress and may return internal server errors.</p>
         </div>
-        <div class="content-block-two">
-            <p>Hello</p>
-        </div>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
-        <p>Home page for my website</p>
     </section>
-    <section class='content-section'>
-        <p>Hi</p>
+    <section class="content-section" style="display: table;">        
+        <table>
+            <tr>
+                <td>
+                    <a class="content-block-portfolio_optimizer" href="{{ url_for('portfolio_optimizer_home') }}">
+                    <div class="content-block-portfolio_optimizer">
+                        <p class="content-block-title">Portfolio Optimizer</p>
+                        <p class="content-block-learn-more">Learn More ›</p>
+                        <img width='90%' height='auto' src='/static/images/Stock-Price-Chart-Fluctuations.png' style="position:relative; padding-top: 0%; padding-bottom: 5%;"/>
+                    </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="content-block-two" href="{{ url_for('auto_remote_home') }}">
+                    <div class="content-block-two">
+                        <img width='90%' height='auto' src='/static/images/Stadium-Lights.png' style="position:relative; padding-top: 5%;"/>
+                        <p class="content-block-title" style="padding-top: 55px;">Auto Remote</p>
+                        <p class="content-block-learn-more">Learn More ›</p>
+                    </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section class="content-section">        
+        <div class="content-block-github" style="background-color: rgb(245, 245, 247); display: flex; justify-content: center;">
+            <a class="content-block-github" href="https://github.com/mqandil" style="background-color: rgb(245, 245, 247)">
+            <img width='auto' height='70%' src='/static/images/Github-Logo.png' style="position:relative; margin: auto">
+            </a>
+        </div>
+    </section>
+    <section class="content-section" style="display: table;">        
+        <table>
+            <tr>
+                <td>
+                    <a class="content-block-about-me" href="{{ url_for('about') }}">
+                    <div class="content-block-about-me">
+                        <p class="content-block-title" style="color: black">About Me</p>
+                        <img width='60%' height='auto' src='/static/images/Portrait-Matthew-Qandil.png' style="position:relative; padding-top: 6%;"/>
+                    </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="content-block-coming-soon" href="{{ url_for('auto_remote_home') }}">
+                    <div class="content-block-coming-soon">
+                        <p class="content-block-title" style="color: black; position:absolute; left: 50%; margin-left:196px;">Coming Soon</p>
+                        <img width='100%' height='auto' src='/static/images/Blue-Abstract-Background.png' style="position:relative; padding: 0%;"/>
+                    </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
     </section>
 {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}
+    Auto Remote
+{% endblock %}
+{% block content %}
+    <section class="content-section" style="height: 10vw;">
+        <p class="page-title">
+            Auto Remote
+        </p>
+    </section>
+    <section class="content-section" style="display: table;">
+        <table>
+            <tr>
+                <td>
+                    <a class="content-block-portfolio_optimizer" href="{{ url_for('auto_remote_app_mlb') }}" style="border-radius: 60px; overflow: hidden;">
+                    <div class="content-block-portfolio_optimizer" style="border-radius: 60px; overflow: hidden;">
+                        <p class="content-block-title">Major League Baseball</p>
+                        <p class="content-block-learn-more">Start Here ›</p>
+                        <img width='100%' height='auto' src='/static/images/Baseball-Player-Hitting.jpeg' style="position:relative; padding-top: 0%;"/>
+                    </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="content-block-two" style="border-radius: 60px; overflow: hidden;">
+                    <div class="content-block-two" style="border-radius: 60px; overflow: hidden;">
+                        <p class="content-block-title">Coming Soon</p>
+                        <p class="content-block-learn-more">Learn More ›</p>
+                        <img width='60%' height='auto' src='/static/images/Blue-Abstract-Background.png' style="position:relative; padding-top: 5%;"/>
+                    </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </section>
+{% endblock %}

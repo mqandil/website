@@ -17,7 +17,7 @@
                         </li>
                         <li><a href="{{ url_for('about') }}" class="navbar-item">About</a></li>
                         <li><a href="{{ url_for('contact') }}" class="navbar-item">Contact</a></li>
-                        <li><a href="{{ url_for('auto_remote_viewer') }}" class="navbar-item">Auto Remote</a></li>
+                        <li><a href="{{ url_for('auto_remote_home') }}" class="navbar-item">Auto Remote</a></li>
                         <li><a href="{{ url_for('portfolio_optimizer_home') }}" class="navbar-item">Portfolio Optimizer</a></li>
                 </ul>
             </div>
@@ -28,7 +28,25 @@
             {% endblock %}
             <hr/>
             <footer>
-                <p>© 2022</p>
+                <div style="margin-right: 30px; float: left; margin-top: 5px;">
+                    <p style="margin-top: 0; font-size: 11px; padding-top: 0; padding-left: 10px; color: rgb(110, 110, 115);">Copyright © 2022 Matthew Qandil. All rights reserved. </p>
+                </div>
+                <div style="margin-right: 30px; float: right; margin-top: 0px;">
+                    <a style="margin-top: 0; padding-top: 0; border-right: 1px solid; border-color: rgb(210, 210, 215);
+                    color: rgb(66, 66, 69);
+                    margin-right: 7px;
+                    padding-right: 10px;
+                    display: inline-block;
+                    font-size: 11px;
+                    white-space: nowrap; border-right: 1px solid;" href="{{ url_for('about') }}" class="navbar-item">About</a>
+                    <a style="margin-top: 0; padding-top: 0;
+                    color: rgb(66, 66, 69);
+                    margin-right: 7px;
+                    font-size: 11px;
+                    padding-right: 10px;
+                    display: inline-block;
+                    white-space: nowrap;" href="{{ url_for('contact') }}" class="navbar-item">Contact</a>
+                </div>
             </footer>
         </div>
     </body>

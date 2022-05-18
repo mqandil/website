@@ -28,29 +28,35 @@ def hello_there(name = None):
 
 ###################AUTO REMOTE###########################
 @app.route("/auto-remote/")
-def auto_remote_viewer():
+def auto_remote_home():
     return render_template(
-        'auto_remote.html'
+        'auto_remote_home.html'
     )
 
-@app.route("/auto-remote/live-situation/", methods=['GET', 'POST'])
-def auto_remote_live_sit_viewer():
+@app.route("/auto-remote/app-mlb/")
+def auto_remote_app_mlb():
+    return render_template(
+        'auto_remote_mlb_app_interface.html'
+    )
+
+@app.route("/auto-remote/app-mlb/live-situation/", methods=['GET', 'POST'])
+def auto_remote_mlb_live_sit_viewer():
     live_situation_info = auto_remote.GetPyRemote().get_live_situation()
 
     return render_template(
         'auto_remote_live.html', data = live_situation_info.to_html(index=False)
     )
 
-@app.route("/auto-remote/interest-index/", methods=['GET', 'POST'])
-def auto_remote_interest_index_viewer():
+@app.route("/auto-remote/app-mlb/interest-index/", methods=['GET', 'POST'])
+def auto_remote_mlb_interest_index_viewer():
     interest_index_info = auto_remote.GetPyRemote().get_interest_index()
 
     return render_template(
         'auto_remote_live.html', data = interest_index_info.to_html(index=False)
     )
 
-@app.route("/auto-remote/ii-calculations/", methods=['GET', 'POST'])
-def auto_remote_ii_calculations_viewer():
+@app.route("/auto-remote/app-mlb/ii-calculations/", methods=['GET', 'POST'])
+def auto_remote_mlb_ii_calculations_viewer():
     ii_calculations_info = auto_remote.GetPyRemote().get_ii_calculations()
 
     return render_template(

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}
+    Auto Remote
+{% endblock %}
+{% block content %}
+    <section class="content-section" style="height: 10vw;">
+        <p class="page-title">
+            Auto Remote for Major League Baseball
+        </p>
+    </section>
+    <section class="content-section" style="display: table; height: 32vw">
+        <table>
+            <tr>
+                <td>
+                    <a class="content-block-triplets" href="{{ url_for('auto_remote_mlb_live_sit_viewer') }}">
+                    <div class="content-block-triplets">
+                        <p class="content-block-title-short">Live Situation</p>
+                        <p class="content-block-learn-more">Go! ›</p>
+                        <img width='100%' height='auto' src='/static/images/Baseball-Player-Hitting.jpeg' style="position:relative; padding-top: 0%;"/>
+                    </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="content-block-triplets" href="{{ url_for('auto_remote_mlb_interest_index_viewer') }}">
+                    <div class="content-block-triplets">
+                        <p class="content-block-title-short">Interest Index</p>
+                        <p class="content-block-learn-more">Go! ›</p>
+                        <img width='60%' height='auto' src='/static/images/Blue-Abstract-Background.png' style="position:relative; padding-top: 5%;"/>
+                    </div>
+                    </a>
+                </td>
+                <td>
+                    <a class="content-block-triplets" href="{{ url_for('auto_remote_mlb_ii_calculations_viewer') }}">
+                    <div class="content-block-triplets">
+                        <p class="content-block-title-short">Interest Index Calculations</p>
+                        <p class="content-block-learn-more">Go! ›</p>
+                        <img width='60%' height='auto' src='/static/images/Blue-Abstract-Background.png' style="position:relative; padding-top: 5%;"/>
+                    </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+{% endblock %}
